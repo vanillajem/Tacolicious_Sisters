@@ -1,0 +1,32 @@
+Restaurant Name : Tacolicious Sisters
+
+Menu :  1 . Breakfasst Tacos						     
+     
+	a 
+	- La Toxica ( Taco ) de Chorizo
+	- Ingredients : Flour Tortilla , Eggs , Beans , Chorizo
+	- Price 
+  	b 
+	- La Sancha ( Taco ) de Tocino
+	- Ingredients : Flour Tortilla , Eggs , Beans , Bacon
+	- Price 
+	c
+	- La Consentida ( Tacos ) de Papa
+	- Ingredients : Flour Tortilla , Eggs , Beans , Papa
+	- Price 
+	d
+	- La Gringa ( Taco ) Queso y Frijoles
+	- Ingredients : Flour Tortilla , Egggs, Beans & Cheese 
+	- Price 
+	
+	 2 . Burrito  
+	- La Bichota ( Burrito ) Everything / Con Todo 
+	- Ingredients : Flour Tortilla , Eggs , Beans , Cheese , Bacon , Mexican Potatoes , Salsa
+	- Price 
+
+i want the website to be in Spanish first and then put the English translation.
+*these are pre made no customization*
+ 
+
+Salsa : Verde - La Mala (spicy you can probably put a fire or a chili pic)
+	Roja - La Buena

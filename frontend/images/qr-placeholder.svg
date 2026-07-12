@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" role="img" aria-labelledby="title desc">
+  <title id="title">QR placeholder</title>
+  <desc id="desc">A decorative placeholder showing where a future QR code will go.</desc>
+  <rect width="400" height="400" fill="#050505"/>
+  <rect x="24" y="24" width="352" height="352" rx="8" fill="#fff2d5"/>
+  <g fill="#050505">
+    <rect x="54" y="54" width="88" height="88"/>
+    <rect x="258" y="54" width="88" height="88"/>
+    <rect x="54" y="258" width="88" height="88"/>
+    <rect x="76" y="76" width="44" height="44" fill="#fff2d5"/>
+    <rect x="280" y="76" width="44" height="44" fill="#fff2d5"/>
+    <rect x="76" y="280" width="44" height="44" fill="#fff2d5"/>
+    <rect x="174" y="58" width="28" height="28"/>
+    <rect x="214" y="58" width="18" height="18"/>
+    <rect x="166" y="110" width="30" height="30"/>
+    <rect x="218" y="112" width="24" height="24"/>
+    <rect x="166" y="166" width="22" height="22"/>
+    <rect x="206" y="166" width="54" height="22"/>
+    <rect x="282" y="166" width="28" height="28"/>
+    <rect x="162" y="216" width="32" height="32"/>
+    <rect x="216" y="220" width="24" height="24"/>
+    <rect x="268" y="218" width="68" height="24"/>
+    <rect x="162" y="274" width="20" height="20"/>
+    <rect x="204" y="268" width="36" height="36"/>
+    <rect x="260" y="268" width="28" height="28"/>
+    <rect x="316" y="282" width="24" height="58"/>
+    <rect x="176" y="326" width="54" height="20"/>
+    <rect x="254" y="326" width="32" height="20"/>
+  </g>
+  <text x="200" y="196" fill="#ff3f9f" font-family="Arial, sans-serif" font-size="26" font-weight="700" text-anchor="middle">QR</text>
+  <text x="200" y="226" fill="#050505" font-family="Arial, sans-serif" font-size="18" font-weight="700" text-anchor="middle">COMING SOON</text>
+</svg>

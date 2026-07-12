@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<!--
+  Tacolicious Sisters website
+  This file controls the page content: headings, menu text, buttons, and sections.
+  The styling lives in styles.css, and the small interactive behavior lives in script.js.
+-->
+<html lang="es">
+<head>
+  <!-- These meta tags help the website look correct on phones, tablets, and computers. -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tacolicious Sisters</title>
+
+  <!--
+    Google Fonts are optional. If the visitor is offline, the browser will fall back
+    to the fonts listed in styles.css.
+  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Comic+Neue:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- Main stylesheet for the neon chalkboard look. -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!--
+    The skip link is an accessibility feature. Keyboard users can jump straight
+    to the main content without tabbing through the whole navigation first.
+  -->
+  <a class="skip-link" href="#menu">Saltar al menu / Skip to menu</a>
+
+  <!--
+    Site header:
+    - The brand name is text so it is searchable and easy to edit.
+    - The order button is intentionally wired through script.js so the third-party
+      ordering link can be updated in one place later.
+  -->
+  <header class="site-header">
+    <a class="brand" href="#top" aria-label="Tacolicious Sisters inicio">
+      <span class="brand-main">Tacolicious</span>
+      <span class="brand-sub">Sisters</span>
+    </a>
+
+    <nav class="site-nav" aria-label="Navegacion principal">
+      <a href="#menu">Menu</a>
+      <a href="#nosotras">Nosotras</a>
+      <a href="#ubicacion">Ubicacion</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+
+    <button class="order-button" type="button" data-order-button>
+      Ordena Aqui <span>Order Here</span>
+    </button>
+  </header>
+
+  <main id="top">
+    <!--
+      Hero section:
+      The generated image is stored in images/hero-updated-menu.png.
+      Replace that file if you ever want a different first impression.
+    -->
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <p class="eyebrow">Hecho al momento / Made to order</p>
+        <h1 id="hero-title">Tacos hechos con amor... y un poco de actitud.</h1>
+        <p class="translation">Tacos made with love... and a little attitude.</p>
+        <div class="hero-actions">
+          <!--
+            Hero order button temporarily hidden.
+            Uncomment this button later if you want ordering beside the menu link again.
+
+          <button class="order-button large" type="button" data-order-button>
+            Ordena Aqui <span>Order Here</span>
+          </button>
+          -->
+          <a class="ghost-link" href="#menu">Ver Menu / View Menu</a>
+        </div>
+      </div>
+
+      <div class="hero-art" aria-label="Tacolicious Sisters menu artwork">
+        <img src="images/hero-updated-menu.png" alt="Neon chalkboard artwork with the updated Tacolicious Sisters tacos and burrito">
+      </div>
+    </section>
+
+    <!--
+      Menu section:
+      Each article is one menu card. To add another item, copy one article,
+      change the image, title, ingredients, and price.
+    -->
+    <section class="menu-section" id="menu" aria-labelledby="menu-title">
+      <div class="section-heading">
+        <p class="eyebrow">Menu</p>
+        <h2 id="menu-title">Tacos de desayuno</h2>
+        <p>Breakfast tacos</p>
+      </div>
+
+      <div class="menu-grid">
+        <article class="menu-card">
+          <img src="images/la-toxica.png" alt="La Toxica chorizo breakfast taco illustration">
+          <div class="menu-card-content">
+            <p class="card-kicker">Taco de chorizo / Chorizo taco</p>
+            <h3>La Toxica</h3>
+            <p class="spanish">Tortilla de harina con huevos, frijoles y chorizo.</p>
+            <p class="english">Flour tortilla with eggs, beans, and chorizo.</p>
+            <ul class="ingredients">
+              <li>Tortilla de harina / Flour tortilla</li>
+              <li>Huevos / Eggs</li>
+              <li>Frijoles / Beans</li>
+              <li>Chorizo</li>
+            </ul>
+            <!-- Change the price below when the final price is ready. -->
+            <p class="price">Precio pendiente <span>Price TBD</span></p>
+          </div>
+        </article>
+
+        <article class="menu-card">
+          <img src="images/la-sancha.png" alt="La Sancha bacon breakfast taco illustration">
+          <div class="menu-card-content">
+            <p class="card-kicker">Taco de tocino / Bacon taco</p>
+            <h3>La Sancha</h3>
+            <p class="spanish">Tortilla de harina con huevos, frijoles y tocino.</p>
+            <p class="english">Flour tortilla with eggs, beans, and bacon.</p>
+            <ul class="ingredients">
+              <li>Tortilla de harina / Flour tortilla</li>
+              <li>Huevos / Eggs</li>
+              <li>Frijoles / Beans</li>
+              <li>Tocino / Bacon</li>
+            </ul>
+            <!-- Change the price below when the final price is ready. -->
+            <p class="price">Precio pendiente <span>Price TBD</span></p>
+          </div>
+        </article>
+
+        <article class="menu-card">
+          <img src="images/la-consentida.png" alt="La Consentida potato breakfast taco illustration">
+          <div class="menu-card-content">
+            <p class="card-kicker">Taco de papa / Potato taco</p>
+            <h3>La Consentida</h3>
+            <p class="spanish">Tortilla de harina con huevos, frijoles y papa.</p>
+            <p class="english">Flour tortilla with eggs, beans, and potato.</p>
+            <ul class="ingredients">
+              <li>Tortilla de harina / Flour tortilla</li>
+              <li>Huevos / Eggs</li>
+              <li>Frijoles / Beans</li>
+              <li>Papa / Potato</li>
+            </ul>
+            <!-- Change the price below when the final price is ready. -->
+            <p class="price">Precio pendiente <span>Price TBD</span></p>
+          </div>
+        </article>
+
+        <article class="menu-card">
+          <img src="images/la-gringa.png" alt="La Gringa bean and cheese breakfast taco illustration">
+          <div class="menu-card-content">
+            <p class="card-kicker">Taco de queso y frijoles / Bean and cheese taco</p>
+            <h3>La Gringa</h3>
+            <p class="spanish">Tortilla de harina con huevos, frijoles y queso.</p>
+            <p class="english">Flour tortilla with eggs, beans, and cheese.</p>
+            <ul class="ingredients">
+              <li>Tortilla de harina / Flour tortilla</li>
+              <li>Huevos / Eggs</li>
+              <li>Frijoles / Beans</li>
+              <li>Queso / Cheese</li>
+            </ul>
+            <!-- Change the price below when the final price is ready. -->
+            <p class="price">Precio pendiente <span>Price TBD</span></p>
+          </div>
+        </article>
+
+        <article class="menu-card featured">
+          <img src="images/la-bichota.png" alt="La Bichota breakfast burrito illustration">
+          <div class="menu-card-content">
+            <p class="card-kicker">Burrito con todo / Everything burrito</p>
+            <h3>La Bichota</h3>
+            <p class="spanish">Con todo: huevos, frijoles, queso, tocino, papas mexicanas y salsa.</p>
+            <p class="english">Everything: eggs, beans, cheese, bacon, Mexican potatoes, and salsa.</p>
+            <ul class="ingredients">
+              <li>Tortilla de harina / Flour tortilla</li>
+              <li>Huevos / Eggs</li>
+              <li>Frijoles / Beans</li>
+              <li>Queso / Cheese</li>
+              <li>Tocino / Bacon</li>
+              <li>Papas mexicanas / Mexican potatoes</li>
+              <li>Salsa</li>
+            </ul>
+            <!-- Change the price below when the final price is ready. -->
+            <p class="price">Precio pendiente <span>Price TBD</span></p>
+          </div>
+        </article>
+      </div>
+
+      <div class="salsa-strip" aria-label="Salsas">
+        <p><strong>La Mala</strong> Salsa verde picante / Spicy green salsa</p>
+        <p><strong>La Buena</strong> Salsa roja / Red salsa</p>
+      </div>
+    </section>
+
+    <!--
+      About section:
+      This gives the site personality without becoming a long landing page.
+    -->
+    <section class="split-section" id="nosotras" aria-labelledby="about-title">
+      <div>
+        <p class="eyebrow">Nosotras / About Us</p>
+        <h2 id="about-title">Sin drama. Solo tacos.</h2>
+        <p class="translation">No drama. Just tacos.</p>
+      </div>
+      <p>
+        Servimos tacos y burritos de desayuno hechos al momento, con sazón,
+        cariño, y salsa extra si quieres.
+        <span>We serve made-to-order breakfast tacos and burritos with flavor,
+        care, and extra salsa if you want it.</span>
+      </p>
+    </section>
+
+    <!--
+      Info section:
+      The location and hours are placeholders from the reference image.
+      Replace them with the real address and schedule whenever they are final.
+    -->
+    <section class="info-strip" id="ubicacion" aria-label="Informacion del restaurante">
+      <div>
+        <h2>Donde estamos?</h2>
+        <p>123 Taco Lane<br>San Antonio, TX 78201</p>
+        <p class="translation">Where we are?</p>
+      </div>
+      <div>
+        <h2>Horario</h2>
+        <p>Lunes - Viernes: 6:30AM - 2:00PM</p>
+        <p>Sabado: 7:00AM - 2:00PM</p>
+        <p>Domingo: Cerrado</p>
+        <p class="translation">Hours</p>
+      </div>
+      <div>
+        <h2>Cafe, tacos y buenas vibras</h2>
+        <p>Coffee, tacos, and good vibes.</p>
+      </div>
+    </section>
+
+    <!--
+      QR and contact section:
+      The QR image is a placeholder for now. When you get the real QR code,
+      save it as images/order-qr.png and change the img src below from
+      images/qr-placeholder.svg to images/order-qr.png.
+    -->
+    <section class="qr-section" id="contacto" aria-labelledby="qr-title">
+      <div>
+        <p class="eyebrow">Ordena / Order</p>
+        <h2 id="qr-title">Escanea cuando el QR este listo.</h2>
+        <p class="translation">Scan when the QR code is ready.</p>
+        <button class="order-button large" type="button" data-order-button>
+          Ordena Aqui <span>Order Here</span>
+        </button>
+      </div>
+
+      <figure class="qr-card">
+        <img src="images/qr-placeholder.svg" alt="QR code placeholder">
+        <figcaption>QR pendiente / QR coming soon</figcaption>
+      </figure>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>Hecho al momento, siempre delicioso. / Made to order, always delicious.</p>
+    <p>@tacolicioussisters</p>
+  </footer>
+
+  <!-- Small script for the future third-party ordering link. -->
+  <script src="script.js"></script>
+</body>
+</html>

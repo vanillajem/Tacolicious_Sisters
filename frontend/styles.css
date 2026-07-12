@@ -1,0 +1,604 @@
+/*
+  Tacolicious Sisters stylesheet
+  This file controls the website's colors, layout, spacing, and responsive behavior.
+  The comments are intentionally detailed so future edits are less mysterious.
+*/
+
+/* These custom properties keep the main design choices in one easy-to-edit place. */
+:root {
+  --bg: #050505;
+  --panel: #11100e;
+  --panel-soft: #191611;
+  --pink: #ff3f9f;
+  --pink-soft: #ff8ec8;
+  --lime: #a9ff28;
+  --cream: #fff2d5;
+  --muted: #d7c7aa;
+  --line: rgba(255, 242, 213, 0.24);
+  --shadow-pink: 0 0 10px rgba(255, 63, 159, 0.75), 0 0 28px rgba(255, 63, 159, 0.35);
+  --shadow-lime: 0 0 10px rgba(169, 255, 40, 0.7), 0 0 24px rgba(169, 255, 40, 0.28);
+  --radius: 8px;
+}
+
+/* Use border-box so padding and borders do not unexpectedly widen elements. */
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 8rem;
+}
+
+body {
+  margin: 0;
+  color: var(--cream);
+  background:
+    radial-gradient(circle at 18% 12%, rgba(255, 63, 159, 0.12), transparent 28rem),
+    radial-gradient(circle at 88% 20%, rgba(169, 255, 40, 0.1), transparent 24rem),
+    var(--bg);
+  font-family: "Comic Neue", "Trebuchet MS", Arial, sans-serif;
+  font-size: 18px;
+  line-height: 1.5;
+}
+
+/* Images should never overflow their containers. */
+img {
+  display: block;
+  max-width: 100%;
+}
+
+/* Focus styles make keyboard navigation visible and intentional. */
+a:focus-visible,
+button:focus-visible {
+  outline: 3px solid var(--lime);
+  outline-offset: 4px;
+}
+
+.skip-link {
+  position: absolute;
+  left: 1rem;
+  top: 1rem;
+  z-index: 10;
+  padding: 0.5rem 0.75rem;
+  color: var(--bg);
+  background: var(--lime);
+  transform: translateY(-160%);
+}
+
+.skip-link:focus {
+  transform: translateY(0);
+}
+
+/* Header stays visible at the top and keeps navigation compact. */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 5;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem clamp(1rem, 4vw, 3.5rem);
+  border-bottom: 1px solid var(--line);
+  background: rgba(5, 5, 5, 0.88);
+  backdrop-filter: blur(14px);
+}
+
+.brand {
+  color: var(--pink);
+  text-decoration: none;
+  text-shadow: var(--shadow-pink);
+}
+
+.brand-main,
+.brand-sub {
+  display: block;
+  font-family: "Bebas Neue", Impact, sans-serif;
+  line-height: 0.85;
+  letter-spacing: 0;
+}
+
+.brand-main {
+  font-size: clamp(2rem, 5vw, 4.8rem);
+  text-transform: none;
+}
+
+.brand-sub {
+  color: var(--lime);
+  font-size: clamp(1.3rem, 3vw, 2.7rem);
+  text-transform: uppercase;
+  text-shadow: var(--shadow-lime);
+}
+
+.site-nav {
+  display: flex;
+  justify-content: center;
+  gap: clamp(0.7rem, 3vw, 2.2rem);
+  flex-wrap: wrap;
+}
+
+.site-nav a,
+.ghost-link {
+  color: var(--cream);
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.site-nav a:hover,
+.ghost-link:hover {
+  color: var(--pink-soft);
+}
+
+/* Reusable order button. The real ordering link is set in script.js. */
+.order-button {
+  min-height: 3rem;
+  padding: 0.65rem 1rem;
+  border: 2px solid var(--pink);
+  border-radius: var(--radius);
+  color: var(--pink-soft);
+  background: rgba(255, 63, 159, 0.08);
+  box-shadow: var(--shadow-pink);
+  cursor: pointer;
+  font: 700 1rem/1.1 "Comic Neue", "Trebuchet MS", Arial, sans-serif;
+  text-transform: uppercase;
+}
+
+.order-button span {
+  display: block;
+  margin-top: 0.15rem;
+  color: var(--lime);
+  font-size: 0.82rem;
+}
+
+.order-button:hover {
+  color: var(--bg);
+  background: var(--pink);
+}
+
+.order-button:hover span {
+  color: var(--bg);
+}
+
+.order-button.large {
+  min-width: 12rem;
+  font-size: 1.15rem;
+}
+
+/* Main sections use responsive padding so the page breathes on large screens and fits phones. */
+.hero,
+.menu-section,
+.split-section,
+.info-strip,
+.qr-section,
+.site-footer {
+  padding-inline: clamp(1rem, 4vw, 3.5rem);
+}
+
+.menu-section,
+.split-section,
+.info-strip,
+.qr-section {
+  scroll-margin-top: 8rem;
+}
+
+.hero {
+  display: grid;
+  grid-template-columns: minmax(0, 0.82fr) minmax(18rem, 1.18fr);
+  align-items: center;
+  gap: clamp(1.5rem, 4vw, 4rem);
+  min-height: calc(100vh - 8rem);
+  padding-top: clamp(2rem, 5vw, 4rem);
+  padding-bottom: clamp(2rem, 5vw, 4rem);
+}
+
+.hero-copy {
+  max-width: 38rem;
+}
+
+.eyebrow {
+  margin: 0 0 0.6rem;
+  color: var(--lime);
+  font-weight: 700;
+  text-transform: uppercase;
+  text-shadow: var(--shadow-lime);
+}
+
+h1,
+h2,
+h3 {
+  margin: 0;
+  font-family: "Bebas Neue", Impact, sans-serif;
+  letter-spacing: 0;
+  line-height: 0.95;
+  text-transform: uppercase;
+}
+
+h1 {
+  color: var(--cream);
+  font-size: clamp(3rem, 8vw, 7.5rem);
+  text-shadow: 0 0 18px rgba(255, 242, 213, 0.2);
+}
+
+h2 {
+  color: var(--pink-soft);
+  font-size: clamp(2.2rem, 5vw, 4.5rem);
+  text-shadow: var(--shadow-pink);
+}
+
+h3 {
+  color: var(--pink-soft);
+  font-size: clamp(2.3rem, 5vw, 4rem);
+  text-shadow: var(--shadow-pink);
+}
+
+.translation {
+  color: var(--muted);
+  font-weight: 700;
+}
+
+.hero-actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.hero-art {
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  overflow: hidden;
+  background: var(--panel);
+  box-shadow: 0 0 40px rgba(255, 63, 159, 0.14);
+}
+
+.hero-art img {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+}
+
+.menu-section {
+  padding-top: 1.5rem;
+  padding-bottom: clamp(2rem, 5vw, 4rem);
+}
+
+.section-heading {
+  display: grid;
+  gap: 0.35rem;
+  margin-bottom: 1.25rem;
+  text-align: center;
+}
+
+.section-heading p {
+  margin: 0;
+}
+
+/* The grid automatically moves from three columns to one column on smaller screens. */
+.menu-grid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 0.75rem;
+}
+
+.menu-card {
+  display: grid;
+  grid-template-rows: auto 1fr;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: linear-gradient(180deg, rgba(25, 22, 17, 0.96), rgba(8, 8, 8, 0.98));
+}
+
+.menu-card.featured {
+  border-color: rgba(169, 255, 40, 0.55);
+  box-shadow: var(--shadow-lime);
+}
+
+.menu-card img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-bottom: 1px solid var(--line);
+}
+
+.menu-card-content {
+  display: grid;
+  align-content: start;
+  gap: 0.45rem;
+  padding: 0.85rem;
+}
+
+.card-kicker {
+  margin: 0;
+  color: var(--lime);
+  font-size: 0.82rem;
+  font-weight: 700;
+  line-height: 1.15;
+  text-transform: uppercase;
+}
+
+.menu-card h3 {
+  font-size: clamp(1.9rem, 3vw, 3rem);
+}
+
+.spanish,
+.english {
+  margin: 0;
+  line-height: 1.25;
+}
+
+.spanish {
+  font-weight: 700;
+}
+
+.english {
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+
+.ingredients {
+  display: grid;
+  gap: 0.12rem;
+  margin: 0;
+  padding-left: 1.2rem;
+  color: var(--cream);
+  font-size: 0.9rem;
+  line-height: 1.2;
+}
+
+.price {
+  margin: 0.25rem 0 0;
+  color: var(--lime);
+  font-family: "Bebas Neue", Impact, sans-serif;
+  font-size: 1.8rem;
+  line-height: 1;
+  text-shadow: var(--shadow-lime);
+}
+
+.price span {
+  display: block;
+  color: var(--muted);
+  font-family: "Comic Neue", "Trebuchet MS", Arial, sans-serif;
+  font-size: 0.72rem;
+  font-weight: 700;
+  line-height: 1.2;
+  text-shadow: none;
+  text-transform: uppercase;
+}
+
+.salsa-strip {
+  display: flex;
+  justify-content: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  margin-top: 0.9rem;
+}
+
+.salsa-strip p {
+  margin: 0;
+  padding: 0.55rem 0.75rem;
+  border: 1px dashed rgba(255, 63, 159, 0.45);
+  border-radius: var(--radius);
+  color: var(--muted);
+  font-size: 0.95rem;
+  line-height: 1.2;
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.salsa-strip strong {
+  display: block;
+  color: var(--pink-soft);
+  font-family: "Bebas Neue", Impact, sans-serif;
+  font-size: 1.5rem;
+  line-height: 1;
+  text-shadow: var(--shadow-pink);
+}
+
+.split-section {
+  display: grid;
+  grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+  gap: 1.5rem;
+  align-items: center;
+  padding-top: clamp(2.5rem, 6vw, 5rem);
+  padding-bottom: clamp(2.5rem, 6vw, 5rem);
+  border-top: 1px solid var(--line);
+}
+
+.split-section p {
+  margin: 0;
+}
+
+.split-section p span {
+  display: block;
+  margin-top: 0.75rem;
+  color: var(--muted);
+}
+
+.info-strip {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.info-strip > div {
+  padding: 1rem;
+  border-left: 1px dashed rgba(255, 63, 159, 0.35);
+}
+
+.info-strip h2 {
+  font-size: 2rem;
+}
+
+.info-strip p {
+  margin: 0.5rem 0 0;
+}
+
+.qr-section {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 2rem;
+  padding-top: clamp(2.5rem, 6vw, 5rem);
+  padding-bottom: clamp(2.5rem, 6vw, 5rem);
+}
+
+.qr-card {
+  display: grid;
+  justify-items: center;
+  gap: 0.75rem;
+  margin: 0;
+  padding: 1rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--panel-soft);
+}
+
+.qr-card img {
+  width: min(62vw, 15rem);
+  aspect-ratio: 1 / 1;
+}
+
+.qr-card figcaption {
+  color: var(--lime);
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.site-footer {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+  padding-top: 1.25rem;
+  padding-bottom: 1.25rem;
+  color: var(--muted);
+  border-top: 1px solid var(--line);
+}
+
+.site-footer p {
+  margin: 0;
+}
+
+/*
+  Tablet layout:
+  The header stacks a little and menu cards become easier to read.
+*/
+@media (max-width: 980px) {
+  .site-header {
+    grid-template-columns: 1fr;
+    justify-items: center;
+  }
+
+  .hero,
+  .split-section,
+  .qr-section {
+    grid-template-columns: 1fr;
+  }
+
+  .info-strip {
+    grid-template-columns: 1fr;
+  }
+
+  .menu-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .hero {
+    min-height: auto;
+  }
+}
+
+/*
+  Phone layout:
+  Buttons stretch full width and text sizes stay readable without crowding.
+*/
+@media (max-width: 560px) {
+  body {
+    font-size: 16px;
+  }
+
+  html {
+    scroll-padding-top: 13rem;
+  }
+
+  .site-nav {
+    gap: 0.8rem;
+    font-size: 0.95rem;
+  }
+
+  .menu-section,
+  .split-section,
+  .info-strip,
+  .qr-section {
+    scroll-margin-top: 13rem;
+  }
+
+  .order-button,
+  .order-button.large,
+  .ghost-link {
+    width: 100%;
+    text-align: center;
+  }
+
+  .hero-actions {
+    align-items: stretch;
+  }
+
+  .menu-grid {
+    grid-template-columns: 1fr;
+    gap: 0.6rem;
+  }
+
+  .menu-card {
+    grid-template-columns: 5.8rem minmax(0, 1fr);
+    grid-template-rows: auto;
+    min-height: 9.2rem;
+  }
+
+  .menu-card img {
+    height: 100%;
+    aspect-ratio: auto;
+    border-right: 1px solid var(--line);
+    border-bottom: 0;
+  }
+
+  .menu-card-content {
+    gap: 0.25rem;
+    padding: 0.65rem;
+  }
+
+  .card-kicker {
+    font-size: 0.72rem;
+  }
+
+  .menu-card h3 {
+    font-size: 1.8rem;
+  }
+
+  .spanish,
+  .english {
+    font-size: 0.86rem;
+    line-height: 1.18;
+  }
+
+  .ingredients {
+    display: none;
+  }
+
+  .price {
+    font-size: 1.35rem;
+  }
+
+  .salsa-strip {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+}
