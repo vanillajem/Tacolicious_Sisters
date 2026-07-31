@@ -56,8 +56,8 @@
   <main id="top">
     <!--
       Hero section:
-      The generated image is stored in images/hero-updated-menu.png.
-      Replace that file if you ever want a different first impression.
+      The right side uses separate doodle crops instead of one large square image.
+      Each doodle is positioned in styles.css so the design feels hand-placed.
     -->
     <section class="hero" aria-labelledby="hero-title">
       <div class="hero-copy">
@@ -77,8 +77,18 @@
         </div>
       </div>
 
-      <div class="hero-art" aria-label="Tacolicious Sisters menu artwork">
-        <img src="images/hero-updated-menu.png" alt="Neon chalkboard artwork with the updated Tacolicious Sisters tacos and burrito">
+      <div class="hero-doodles" aria-hidden="true">
+        <!--
+          These doodle images come from images/doodles.png, but they are cropped
+          into separate pieces so the hero does not look like a pasted rectangle.
+        -->
+        <img class="doodle doodle-taco" src="images/doodle-taco.png" alt="">
+        <img class="doodle doodle-coffee" src="images/doodle-coffee.png" alt="">
+        <img class="doodle doodle-salsa" src="images/doodle-extra-salsa.png" alt="">
+        <img class="doodle doodle-pepper" src="images/doodle-pepper.png" alt="">
+        <img class="doodle doodle-bubble" src="images/doodle-tacos-first.png" alt="">
+        <img class="doodle doodle-cheese" src="images/doodle-cheese.png" alt="">
+        <img class="doodle doodle-crown" src="images/doodle-crown.png" alt="">
       </div>
     </section>
 
