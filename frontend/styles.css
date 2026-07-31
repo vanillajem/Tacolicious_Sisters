@@ -247,78 +247,22 @@ h3 {
 }
 
 /*
-  Doodle hero:
-  The original doodle source is a rectangular image. These are separate crops,
-  layered with mix-blend-mode so their black edges disappear into the page.
+  Hero artwork:
+  The doodle image already has the right brightness and texture, so we show it
+  directly instead of trying to cut it into separate pieces.
 */
-.hero-doodles {
-  position: relative;
-  min-height: clamp(22rem, 36vw, 31rem);
-  isolation: isolate;
+.hero-art {
+  overflow: hidden;
+  border-radius: var(--radius);
+  background: var(--bg);
+  box-shadow: 0 0 42px rgba(255, 63, 159, 0.18);
 }
 
-.hero-doodles::before {
-  content: "";
-  position: absolute;
-  inset: 10% 4% 8% 2%;
-  border-radius: 50%;
-  background:
-    radial-gradient(circle at 52% 50%, rgba(255, 63, 159, 0.14), transparent 36%),
-    radial-gradient(circle at 76% 72%, rgba(169, 255, 40, 0.12), transparent 30%);
-  filter: blur(24px);
-  opacity: 0.55;
-}
-
-.doodle {
-  position: absolute;
-  width: var(--doodle-width);
-  max-width: none;
-  opacity: 0.98;
-  filter:
-    saturate(1.2)
-    contrast(1.08)
-    drop-shadow(0 0 8px rgba(255, 63, 159, 0.28))
-    drop-shadow(0 0 14px rgba(169, 255, 40, 0.14));
-}
-
-.doodle-taco {
-  --doodle-width: clamp(18rem, 25vw, 25rem);
-  left: 17%;
-  top: 28%;
-  transform: rotate(-4deg);
-  z-index: 3;
-}
-
-.doodle-coffee {
-  --doodle-width: clamp(8rem, 12vw, 12rem);
-  right: 14%;
-  top: 10%;
-  transform: rotate(4deg);
-  z-index: 2;
-}
-
-.doodle-salsa {
-  --doodle-width: clamp(8rem, 12vw, 12rem);
-  right: 8%;
-  bottom: 7%;
-  transform: rotate(-3deg);
-  z-index: 2;
-}
-
-.doodle-bubble {
-  --doodle-width: clamp(8rem, 12vw, 12rem);
-  left: 4%;
-  top: 10%;
-  transform: rotate(-6deg);
-  z-index: 1;
-}
-
-.doodle-crown {
-  --doodle-width: clamp(6rem, 8vw, 8.5rem);
-  left: 36%;
-  top: 6%;
-  transform: rotate(4deg);
-  z-index: 1;
+.hero-art img {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  object-position: center;
 }
 
 .menu-section {
@@ -564,9 +508,7 @@ h3 {
     grid-template-columns: 1fr;
   }
 
-  .hero-doodles {
-    min-height: 24rem;
-    max-width: 42rem;
+  .hero-art {
     width: 100%;
     justify-self: center;
   }
@@ -620,27 +562,8 @@ h3 {
     align-items: stretch;
   }
 
-  .hero-doodles {
-    min-height: 15rem;
-    overflow: hidden;
-  }
-
-  .doodle-taco {
-    --doodle-width: 13rem;
-    left: 30%;
-    top: 24%;
-  }
-
-  .doodle-coffee {
-    --doodle-width: 6.4rem;
-    right: 6%;
-    top: 8%;
-  }
-
-  .doodle-crown {
-    --doodle-width: 5rem;
-    left: 12%;
-    top: 7%;
+  .hero-art img {
+    aspect-ratio: 16 / 11;
   }
 
   .menu-grid {
